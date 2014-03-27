@@ -7386,6 +7386,10 @@ Based on the datasheets for the following products.&lt;br&gt;
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
+<part name="C5" library="resistor" deviceset="C-EU" device="C0603K" value="10uF"/>
+<part name="C6" library="resistor" deviceset="C-EU" device="C0603K" value="10uF"/>
+<part name="GND7" library="supply1" deviceset="GND" device=""/>
+<part name="GND8" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -7405,9 +7409,9 @@ Based on the datasheets for the following products.&lt;br&gt;
 <attribute name="NAME" x="139.7" y="97.79" size="1.778" layer="95"/>
 <attribute name="VALUE" x="139.7" y="95.25" size="1.778" layer="96"/>
 </instance>
-<instance part="P+3" gate="1" x="137.16" y="99.06"/>
-<instance part="+3V6" gate="G$1" x="162.56" y="99.06"/>
-<instance part="GND11" gate="1" x="149.86" y="81.28" rot="MR0"/>
+<instance part="P+3" gate="1" x="132.08" y="99.06"/>
+<instance part="+3V6" gate="G$1" x="165.1" y="99.06"/>
+<instance part="GND11" gate="1" x="149.86" y="78.74" rot="MR0"/>
 <instance part="IC1" gate="G$1" x="71.12" y="58.42" smashed="yes"/>
 <instance part="R1" gate="G$1" x="40.64" y="68.58" rot="R90"/>
 <instance part="R2" gate="G$1" x="58.42" y="116.84"/>
@@ -7424,6 +7428,10 @@ Based on the datasheets for the following products.&lt;br&gt;
 <instance part="GND4" gate="1" x="38.1" y="88.9"/>
 <instance part="GND5" gate="1" x="22.86" y="35.56"/>
 <instance part="GND6" gate="1" x="53.34" y="101.6"/>
+<instance part="C5" gate="G$1" x="132.08" y="86.36"/>
+<instance part="C6" gate="G$1" x="165.1" y="86.36"/>
+<instance part="GND7" gate="1" x="132.08" y="78.74" rot="MR0"/>
+<instance part="GND8" gate="1" x="165.1" y="78.74" rot="MR0"/>
 </instances>
 <busses>
 </busses>
@@ -7463,6 +7471,7 @@ Based on the datasheets for the following products.&lt;br&gt;
 <segment>
 <pinref part="IC2" gate="G$1" pin="GND"/>
 <pinref part="GND11" gate="1" pin="GND"/>
+<wire x1="149.86" y1="81.28" x2="149.86" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="TEST"/>
@@ -7509,6 +7518,14 @@ Based on the datasheets for the following products.&lt;br&gt;
 <pinref part="C4" gate="G$1" pin="2"/>
 <pinref part="GND6" gate="1" pin="GND"/>
 </segment>
+<segment>
+<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="GND7" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C6" gate="G$1" pin="2"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+</segment>
 </net>
 <net name="+3V3" class="0">
 <segment>
@@ -7520,8 +7537,11 @@ Based on the datasheets for the following products.&lt;br&gt;
 <segment>
 <pinref part="IC2" gate="G$1" pin="OUT"/>
 <pinref part="+3V6" gate="G$1" pin="+3V3"/>
-<wire x1="160.02" y1="91.44" x2="162.56" y2="91.44" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="91.44" x2="162.56" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="160.02" y1="91.44" x2="165.1" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="165.1" y1="91.44" x2="165.1" y2="96.52" width="0.1524" layer="91"/>
+<pinref part="C6" gate="G$1" pin="1"/>
+<wire x1="165.1" y1="91.44" x2="165.1" y2="88.9" width="0.1524" layer="91"/>
+<junction x="165.1" y="91.44"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="G$1" pin="VCCIOA"/>
@@ -7627,30 +7647,6 @@ Based on the datasheets for the following products.&lt;br&gt;
 <wire x1="17.78" y1="83.82" x2="45.72" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="USART_TX" class="0">
-<segment>
-<pinref part="CON1" gate="G$1" pin="TX1"/>
-<wire x1="185.42" y1="50.8" x2="170.18" y2="50.8" width="0.1524" layer="91"/>
-<label x="172.72" y="50.8" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="BDBUS0"/>
-<label x="99.06" y="55.88" size="1.778" layer="95"/>
-<wire x1="96.52" y1="55.88" x2="111.76" y2="55.88" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="USART_RX" class="0">
-<segment>
-<pinref part="CON1" gate="G$1" pin="RX0"/>
-<wire x1="185.42" y1="53.34" x2="170.18" y2="53.34" width="0.1524" layer="91"/>
-<label x="172.72" y="53.34" size="1.778" layer="95"/>
-</segment>
-<segment>
-<pinref part="IC1" gate="G$1" pin="BDBUS1"/>
-<wire x1="111.76" y1="53.34" x2="96.52" y2="53.34" width="0.1524" layer="91"/>
-<label x="99.06" y="53.34" size="1.778" layer="95"/>
-</segment>
-</net>
 <net name="N$1" class="0">
 <segment>
 <pinref part="CON2" gate="G$1" pin="VBUS"/>
@@ -7673,9 +7669,12 @@ Based on the datasheets for the following products.&lt;br&gt;
 </segment>
 <segment>
 <pinref part="P+3" gate="1" pin="+5V"/>
-<wire x1="137.16" y1="96.52" x2="137.16" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="96.52" x2="132.08" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="IC2" gate="G$1" pin="IN"/>
-<wire x1="137.16" y1="91.44" x2="139.7" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="132.08" y1="91.44" x2="139.7" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="C5" gate="G$1" pin="1"/>
+<wire x1="132.08" y1="91.44" x2="132.08" y2="88.9" width="0.1524" layer="91"/>
+<junction x="132.08" y="91.44"/>
 </segment>
 <segment>
 <pinref part="R2" gate="G$1" pin="2"/>
@@ -7776,6 +7775,30 @@ Based on the datasheets for the following products.&lt;br&gt;
 <pinref part="IC1" gate="G$1" pin="EEDATA"/>
 <wire x1="33.02" y1="30.48" x2="45.72" y2="30.48" width="0.1524" layer="91"/>
 <label x="35.56" y="30.48" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="TXD" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="BDBUS0"/>
+<label x="99.06" y="55.88" size="1.778" layer="95"/>
+<wire x1="96.52" y1="55.88" x2="111.76" y2="55.88" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="CON1" gate="G$1" pin="RX0"/>
+<wire x1="185.42" y1="53.34" x2="170.18" y2="53.34" width="0.1524" layer="91"/>
+<label x="172.72" y="53.34" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="RXD" class="0">
+<segment>
+<pinref part="IC1" gate="G$1" pin="BDBUS1"/>
+<wire x1="111.76" y1="53.34" x2="96.52" y2="53.34" width="0.1524" layer="91"/>
+<label x="99.06" y="53.34" size="1.778" layer="95"/>
+</segment>
+<segment>
+<pinref part="CON1" gate="G$1" pin="TX1"/>
+<wire x1="185.42" y1="50.8" x2="170.18" y2="50.8" width="0.1524" layer="91"/>
+<label x="172.72" y="50.8" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
