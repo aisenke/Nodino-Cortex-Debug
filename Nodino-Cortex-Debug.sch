@@ -7358,7 +7358,7 @@ Based on the datasheets for the following products.&lt;br&gt;
 </classes>
 <parts>
 <part name="CON1" library="nodino" deviceset="NODINO-JTAG" device="MODULE"/>
-<part name="Q1" library="crystal" deviceset="FA-" device="20H" value="16MHz"/>
+<part name="Q1" library="crystal" deviceset="FA-" device="20H" value="6MHz"/>
 <part name="CON2" library="con-usb-2" deviceset="USB-OTG_SHIELD" device=""/>
 <part name="L1" library="resistor" deviceset="L-EU" device="L0805" value="FBM0805PT800S"/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
